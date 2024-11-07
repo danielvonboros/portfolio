@@ -1,6 +1,10 @@
+import { Typography } from "@mui/material";
+
 const Contact = () => (
   <>
-    <h1>Contact Page</h1>
+    <Typography variant={"h4"} color="text.primary">
+      Contact Page
+    </Typography>
   </>
 );
 

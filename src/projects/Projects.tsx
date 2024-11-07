@@ -1,6 +1,10 @@
+import { Typography } from "@mui/material";
+
 const Projects = () => (
   <>
-    <h1>Projects Page</h1>
+    <Typography variant={"h3"} color="text.primary">
+      Projects Page
+    </Typography>
   </>
 );
 

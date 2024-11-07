@@ -1,6 +1,10 @@
+import { Typography } from "@mui/material";
+
 const Skills = () => (
   <>
-    <h1>Skills Page</h1>
+    <Typography variant={"h4"} color="text.primary">
+      Skills Page
+    </Typography>
   </>
 );
 
