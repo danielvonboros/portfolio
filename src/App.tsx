@@ -4,7 +4,7 @@ import About from "./about/About";
 import Projects from "./projects/Projects";
 import Skills from "./skills/Skills";
 import Contact from "./contact/Contact";
-import { AppBar, Box, Button, Toolbar } from "@mui/material";
+import { AppBar, Box, Button, Container, Toolbar } from "@mui/material";
 
 const App = () => {
   const [currentSection, setCurrentSection] = useState("Home");
@@ -41,7 +41,33 @@ const App = () => {
           ))}
         </Toolbar>
       </AppBar>
-      <Box sx={{ flexGrow: 1, overflow: "auto", p: 3 }}>{renderSection()}</Box>
+      <Container
+        maxWidth={false}
+        sx={{
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          p: { xs: 0, sm: 3 },
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            maxWidth: { sm: 1024 },
+            maxHeight: { sm: 768 },
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Box sx={{ flexGrow: 1, overflow: "auto", p: 3 }}>
+            {renderSection()}
+          </Box>
+        </Box>
+      </Container>
     </>
   );
 };
