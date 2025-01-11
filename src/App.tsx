@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 import Home from "./home/Home";
 import About from "./about/About";
 import Projects from "./projects/Projects";
@@ -15,7 +15,10 @@ import {
 import "./App.css";
 
 const App = () => {
+  const sections = ["Home", "About", "Projects", "Skills", "Contact"];
+
   const [currentSection, setCurrentSection] = useState("Home");
+  const sectionRefs = useRef(sections.map(() => React.createRef()));
 
   const renderSection = () => {
     switch (currentSection) {
@@ -34,11 +37,18 @@ const App = () => {
     }
   };
 
+  const scrollToSection = (index) => {
+    sectionRefs.current[index].current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <>
       <Box
         sx={{
-          height: "100%",
+          minHeight: "100vh",
           width: "100%",
           backgroundColor: "primary.main",
         }}
@@ -49,44 +59,52 @@ const App = () => {
           sx={{ borderBottom: "solid 1px #AFE7E9" }}
         >
           <Toolbar>
-            {["Home", "About", "Projects", "Skills", "Contact"].map(
-              (section) => (
-                <Button
-                  key={section}
-                  color="inherit"
-                  onClick={() => setCurrentSection(section)}
-                >
-                  <Typography>{section}</Typography>
-                </Button>
-              )
-            )}
+            {sections.map((section, index) => (
+              <Button
+                key={section}
+                color="inherit"
+                onClick={() => scrollToSection(index)}
+              >
+                <Typography color="text.primary">{section}</Typography>
+              </Button>
+            ))}
           </Toolbar>
         </AppBar>
         <Container
           maxWidth={false}
           sx={{
-            height: "100vh",
+            minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            p: { xs: 0, sm: 3 },
+            p: { xs: 1, sm: 0 },
           }}
         >
           <Box
             sx={{
               width: "100%",
-              height: "100%",
+              minHeight: "100vh",
               maxWidth: { sm: 1024 },
-              maxHeight: { sm: 768 },
+              // maxHeight: { sm: 768 },
               overflow: "hidden",
               display: "flex",
               flexDirection: "column",
             }}
           >
-            <Box sx={{ flexGrow: 1, overflow: "auto", p: 3 }}>
-              {renderSection()}
-            </Box>
+            {sections.map((section, index) => (
+              <Box
+                key={section}
+                ref={sectionRefs.current[index]}
+                sx={{ flexGrow: 1, p: 3 }}
+              >
+                {section === "Home" && <Home />}
+                {section === "About" && <About />}
+                {section === "Projects" && <Projects />}
+                {section === "Skills" && <Skills />}
+                {section === "Contact" && <Contact />}
+              </Box>
+            ))}
           </Box>
         </Container>
       </Box>

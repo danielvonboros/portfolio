@@ -1,10 +1,12 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const About = () => (
   <>
-    <Typography variant={"h4"} color="text.primary">
-      About Page
-    </Typography>
+    <Box sx={{ minHeight: "100vh", width: "100%", border: "1px solid blue" }}>
+      <Typography variant={"h4"} color="text.primary">
+        About Page
+      </Typography>
+    </Box>
   </>
 );
 
