@@ -18,8 +18,9 @@ export const theme = createTheme({
           fontSize: 96,
         },
         h3: {
-          fontFamily: 'Chelsea Market',
+          fontFamily: 'Noto Sans',
           fontSize: 30,
+          fontWeight: 800,
         },
         h4: {
             fontFamily: 'Advent Pro',
@@ -27,9 +28,9 @@ export const theme = createTheme({
             fontWeight: 400,
         },
         h5: {
-          fontFamily: 'Advent Pro',
+          fontFamily: 'Archivo',
             fontSize: 24,
-            fontWeight: 400,
+            fontWeight: 600,
         },
         h6: {
           fontFamily: 'Advent Pro',

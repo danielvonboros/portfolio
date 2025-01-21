@@ -48,7 +48,6 @@ const App = () => {
     <>
       <Box
         sx={{
-          minHeight: "100vh",
           width: "100%",
           backgroundColor: "primary.main",
         }}
@@ -73,7 +72,6 @@ const App = () => {
         <Container
           maxWidth={false}
           sx={{
-            minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
