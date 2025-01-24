@@ -1,7 +1,6 @@
 import { Box, Link, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { projectData } from "./projectData";
-import { theme } from "../assets/theme";
 
 const ProjectCardItem = styled(Box)(({ theme }) => ({
   minHeight: "350px",

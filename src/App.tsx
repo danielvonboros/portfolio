@@ -49,6 +49,7 @@ const App = () => {
       <Box
         sx={{
           width: "100%",
+          p: 0,
           backgroundColor: "primary.main",
         }}
       >
@@ -83,7 +84,8 @@ const App = () => {
             sx={{
               width: "100%",
               minHeight: "100vh",
-              maxWidth: { sm: 1024 },
+              maxWidth: { sm: 1100 },
+              p: 0,
               // maxHeight: { sm: 768 },
               overflow: "hidden",
               display: "flex",
