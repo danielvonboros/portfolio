@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Home from "./home/Home";
 import About from "./about/About";
 import Projects from "./projects/Projects";
@@ -43,6 +43,18 @@ const App = () => {
       block: "start",
     });
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const activeSection = sectionRefs.current.findIndex(
+        (ref) => ref.current.offsetTop <= scrollPosition + windowHeight / 2
+      );
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
