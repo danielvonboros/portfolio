@@ -4,6 +4,7 @@ const Home = () => (
   <>
     <Box
       sx={{
+        pt: 8,
         minHeight: "100vh",
         // calc 100vh - heightAppBar
         width: "100%",

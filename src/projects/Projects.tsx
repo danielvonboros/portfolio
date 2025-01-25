@@ -5,6 +5,7 @@ const Projects = () => (
   <>
     <Box
       sx={{
+        pt: 8,
         minHeight: "100vh",
         width: "100%",
         border: "1px solid green",
