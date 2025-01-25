@@ -66,7 +66,7 @@ const App = () => {
         }}
       >
         <AppBar
-          position="static"
+          position="fixed"
           elevation={0}
           sx={{ borderBottom: "solid 1px #AFE7E9" }}
         >
