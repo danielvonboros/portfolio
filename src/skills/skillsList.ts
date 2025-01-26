@@ -1,6 +1,6 @@
 import Skills from "./Skills";
 
-export const skillsList:Skills[] = [
+export const skillsList:Skill[] = [
     {
         id:1,
         title: "React",

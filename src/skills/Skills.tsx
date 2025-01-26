@@ -1,5 +1,5 @@
 import { Box, Grid2, Typography } from "@mui/material";
-import SkillsCard from "./SkillsCard";
+import SkillsCard, { Skill } from "./SkillsCard";
 import { skillsList } from "./skillsList";
 
 const Skills = () => (
@@ -20,7 +20,7 @@ const Skills = () => (
         Skills Page
       </Typography>
       <Grid2 container columns={7} spacing={1} justifyContent={"center"}>
-        {skillsList.map((skill) => (
+        {skillsList.map((skill: Skill) => (
           <SkillsCard skill={skill} />
         ))}
       </Grid2>

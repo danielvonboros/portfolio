@@ -1,5 +1,8 @@
 import { Box, Typography } from "@mui/material";
 
+export interface SkillsList {
+  skill: Skill;
+}
 export interface Skill {
   id: number;
   title: string;
@@ -7,9 +10,9 @@ export interface Skill {
   description: string;
 }
 
-const SkillsCard = ({ skill }: Skill) => {
+const SkillsCard = ({ skill }: SkillsList) => {
   return (
-    <Box>
+    <Box sx={{ maxWidth: "100px", maxHeight: "200px", overflow: "hidden" }}>
       <Box sx={{ width: "50px", height: "50px" }}>
         <img src={skill.image} alt={skill.title} width="100%" height="100%" />
       </Box>
