@@ -14,6 +14,14 @@ const About = () => {
       setExpanded(isExpanded ? panel : false);
     };
 
+  const accordionStyle = {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "primary.main",
+  };
+
   return (
     <>
       <Box
@@ -32,6 +40,7 @@ const About = () => {
           about
         </Typography>
         <Accordion
+          sx={accordionStyle}
           expanded={expanded === "story"}
           onChange={handleChange("story")}
         >
@@ -73,6 +82,7 @@ const About = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion
+          sx={accordionStyle}
           expanded={expanded === "education"}
           onChange={handleChange("education")}
         >
@@ -101,6 +111,7 @@ const About = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion
+          sx={accordionStyle}
           expanded={expanded === "experience"}
           onChange={handleChange("experience")}
         >
