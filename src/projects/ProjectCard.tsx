@@ -22,7 +22,9 @@ const ProjectCard = () => {
         <img src={project.image} alt={project.title} />
         <Typography color="secondary.main">{project.description}</Typography>
         <Typography color="secondary.main">{project.techStack}</Typography>
-        <Link href={project.link}>Link</Link>
+        <Link sx={{ color: "secondary.main" }} href={project.link}>
+          Link
+        </Link>
       </ProjectCardItem>
     ));
   } else {
