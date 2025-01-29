@@ -1,8 +1,9 @@
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Link, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { projectData } from "./projectData";
 
-const ProjectCardItem = styled(Box)(({ theme }) => ({
+const ProjectCardItem = styled(Paper)(({ theme }) => ({
+  elevation: 0,
   minHeight: "350px",
   width: "280px",
   backgroundColor: theme.palette.primary.main,
@@ -10,18 +11,21 @@ const ProjectCardItem = styled(Box)(({ theme }) => ({
   margin: 2,
   border: `1px solid ${theme.palette.secondary.main}`,
   borderRadius: "15px",
+  "&:hover": {
+    elevation: 3,
+  },
 }));
 
 const ProjectCard = () => {
   if (projectData) {
     return projectData.map((project) => (
       <ProjectCardItem key={project.id}>
-        <Typography variant="h5" fontWeight={600} color="secondary.main">
+        <Typography variant="h5" fontWeight={600}>
           {project.title}
         </Typography>
         <img src={project.image} alt={project.title} />
-        <Typography color="secondary.main">{project.description}</Typography>
-        <Typography color="secondary.main">{project.techStack}</Typography>
+        <Typography>{project.description}</Typography>
+        <Typography>{project.techStack}</Typography>
         <Link sx={{ color: "secondary.main" }} href={project.link}>
           Link
         </Link>
