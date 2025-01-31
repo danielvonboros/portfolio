@@ -16,6 +16,24 @@ const About = () => {
       setExpanded(isExpanded ? panel : false);
     };
 
+  const sharedAccordionStyle = {
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: "primary.main",
+    borderTop: `2px solid ${theme.palette.secondary.main}`,
+    borderLeft: `2px solid ${theme.palette.secondary.main}`,
+  };
+
+  const getAccordionStyle = (
+    panel: string,
+    initialWidth: string,
+    initialMarginLeft: string
+  ): SxProps<Theme> => ({
+    ...sharedAccordionStyle,
+    width: expanded === panel ? "100%" : initialWidth,
+    marginLeft: expanded === panel ? 0 : initialMarginLeft,
+  });
+
   return (
     <>
       <Box
@@ -36,13 +54,7 @@ const About = () => {
         </Typography>
 
         <Accordion
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            backgroundColor: "primary.main",
-            width: "100%",
-            marginLeft: 0,
-          }}
+          sx={getAccordionStyle("story", "100%", "0")}
           expanded={expanded === "story"}
           onChange={handleChange("story")}
         >
@@ -86,16 +98,7 @@ const About = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            backgroundColor: "primary.main",
-            minWidth: "90%",
-            marginLeft: "10%",
-            borderTop: `2px solid ${theme.palette.secondary.main}`,
-            borderLeft: `2px solid ${theme.palette.secondary.main}`,
-            borderBottom: 0,
-          }}
+          sx={getAccordionStyle("education", "90%", "10%")}
           expanded={expanded === "education"}
           onChange={handleChange("education")}
         >
@@ -126,16 +129,7 @@ const About = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            backgroundColor: "primary.main",
-            minWidth: "80%",
-            marginLeft: "20%",
-            borderTop: `2px solid ${theme.palette.secondary.main}`,
-            borderLeft: `2px solid ${theme.palette.secondary.main}`,
-            borderBottom: 0,
-          }}
+          sx={getAccordionStyle("experience", "80%", "20%")}
           expanded={expanded === "experience"}
           onChange={handleChange("experience")}
         >
