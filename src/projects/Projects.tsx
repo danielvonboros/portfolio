@@ -1,5 +1,6 @@
 import { Box, Grid2, Typography } from "@mui/material";
 import ProjectCard from "./ProjectCard";
+import { theme } from "../assets/theme";
 
 const Projects = () => (
   <>
@@ -7,8 +8,9 @@ const Projects = () => (
       sx={{
         pt: 8,
         minHeight: "100vh",
-        width: "100%",
-        border: "1px solid green",
+        width: "calc(100% - 3px)",
+        borderRight: `3px solid ${theme.palette.secondary.main}`,
+        borderBottom: `3px solid ${theme.palette.secondary.main}`,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

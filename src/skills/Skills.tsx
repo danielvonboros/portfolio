@@ -1,6 +1,7 @@
 import { Box, Grid2, Typography } from "@mui/material";
 import SkillsCard, { Skill } from "./SkillsCard";
 import { skillsList } from "./skillsList";
+import { theme } from "../assets/theme";
 
 const Skills = () => (
   <>
@@ -9,7 +10,8 @@ const Skills = () => (
         pt: 8,
         minHeight: "100vh",
         width: "100%",
-        border: "1px solid yellow",
+        borderLeft: `3px solid ${theme.palette.secondary.main}`,
+        borderBottom: `3px solid ${theme.palette.secondary.main}`,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

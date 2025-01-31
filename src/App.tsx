@@ -9,6 +9,7 @@ import {
   Box,
   Button,
   Container,
+  Stack,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -68,20 +69,29 @@ const App = () => {
         <AppBar
           position="fixed"
           elevation={0}
-          sx={{ borderBottom: "solid 1px #AFE7E9" }}
+          sx={{
+            borderBottom: "solid 1px #AFE7E9",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
         >
-          <Toolbar>
-            {sections.map((section, index) => (
-              <Button
-                key={section}
-                color="inherit"
-                onClick={() => scrollToSection(index)}
-              >
-                <Typography color="text.primary">{section}</Typography>
-              </Button>
-            ))}
-          </Toolbar>
+          <Typography>Home</Typography>
+          <Stack direction="row">
+            <Toolbar>
+              {sections.map((section, index) => (
+                <Button
+                  key={section}
+                  color="inherit"
+                  onClick={() => scrollToSection(index)}
+                >
+                  <Typography color="text.primary">{section}</Typography>
+                </Button>
+              ))}
+            </Toolbar>
+          </Stack>
         </AppBar>
+
         <Container
           maxWidth={false}
           sx={{
@@ -108,7 +118,7 @@ const App = () => {
               <Box
                 key={section}
                 ref={sectionRefs.current[index]}
-                sx={{ flexGrow: 1, p: 3 }}
+                sx={{ flexGrow: 1, p: 0 }}
               >
                 {section === "Home" && <Home />}
                 {section === "About" && <About />}

@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { theme } from "../assets/theme";
 
 const Contact = () => (
   <>
@@ -6,8 +7,8 @@ const Contact = () => (
       sx={{
         pt: 8,
         minHeight: "100vh",
-        width: "100%",
-        border: "1px solid purple",
+        width: "calc(100% - 3px)",
+        borderRight: `3px solid ${theme.palette.secondary.main}`,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

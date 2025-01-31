@@ -1,14 +1,18 @@
-import { Box, TextField, Typography } from "@mui/material";
+import { StayPrimaryPortraitOutlined } from "@mui/icons-material";
+import { Box, Typography } from "@mui/material";
+import { theme } from "../assets/theme";
 
 const Home = () => (
   <>
     <Box
       sx={{
-        pt: 8,
         minHeight: "100vh",
+        p: 0,
+        pt: 8,
         // calc 100vh - heightAppBar
-        width: "100%",
-        border: "1px solid red",
+        width: "calc(100% - 3px)",
+        borderRight: `3px solid ${theme.palette.secondary.main}`,
+        borderBottom: `3px solid ${theme.palette.secondary.main}`,
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
@@ -45,7 +49,7 @@ const Home = () => (
           with React and TypeScript
         </Typography>
       </Box>
-      <Box sx={{ width: "50%" }}>
+      <Box sx={{ maxWidth: "40%" }}>
         <img
           src="IMG_0584.jpeg"
           alt="Daniel"

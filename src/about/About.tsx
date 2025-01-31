@@ -1,11 +1,13 @@
 import {
   Accordion,
   AccordionDetails,
-  AccordionSummary,
   Box,
   Typography,
+  AccordionSummary,
 } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 import React, { useState } from "react";
+import { theme } from "../assets/theme";
 
 const About = () => {
   const [expanded, setExpanded] = useState<string | false>("experience");
@@ -14,22 +16,15 @@ const About = () => {
       setExpanded(isExpanded ? panel : false);
     };
 
-  const accordionStyle = {
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "primary.main",
-  };
-
   return (
     <>
       <Box
         sx={{
           pt: 8,
           minHeight: "100vh",
-          width: "100%",
-          border: "1px solid blue",
+          width: "calc(100% - 3px)",
+          borderLeft: `3px solid ${theme.palette.secondary.main}`,
+          borderBottom: `3px solid ${theme.palette.secondary.main}`,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -39,16 +34,25 @@ const About = () => {
         <Typography variant={"h3"} color="text.primary" sx={{ fontSize: 50 }}>
           about
         </Typography>
+
         <Accordion
-          sx={accordionStyle}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "primary.main",
+            width: "100%",
+            marginLeft: 0,
+          }}
           expanded={expanded === "story"}
           onChange={handleChange("story")}
         >
-          <AccordionSummary>
+          <AccordionSummary
+            expandIcon={<AddIcon sx={{ color: "secondary.main" }} />}
+          >
             <Typography
               variant={"h3"}
               color="text.primary"
-              sx={{ fontSize: 50 }}
+              // sx={{ fontSize: 50 }}
             >
               my story
             </Typography>
@@ -82,15 +86,26 @@ const About = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion
-          sx={accordionStyle}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "primary.main",
+            minWidth: "90%",
+            marginLeft: "10%",
+            borderTop: `2px solid ${theme.palette.secondary.main}`,
+            borderLeft: `2px solid ${theme.palette.secondary.main}`,
+            borderBottom: 0,
+          }}
           expanded={expanded === "education"}
           onChange={handleChange("education")}
         >
-          <AccordionSummary>
+          <AccordionSummary
+            expandIcon={<AddIcon sx={{ color: "secondary.main" }} />}
+          >
             <Typography
               variant={"h3"}
               color="text.primary"
-              sx={{ fontSize: 50 }}
+              // sx={{ fontSize: 50 }}
             >
               education
             </Typography>
@@ -111,15 +126,26 @@ const About = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion
-          sx={accordionStyle}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "primary.main",
+            minWidth: "80%",
+            marginLeft: "20%",
+            borderTop: `2px solid ${theme.palette.secondary.main}`,
+            borderLeft: `2px solid ${theme.palette.secondary.main}`,
+            borderBottom: 0,
+          }}
           expanded={expanded === "experience"}
           onChange={handleChange("experience")}
         >
-          <AccordionSummary>
+          <AccordionSummary
+            expandIcon={<AddIcon sx={{ color: "secondary.main" }} />}
+          >
             <Typography
               variant={"h3"}
               color="text.primary"
-              sx={{ fontSize: 50 }}
+              // sx={{ fontSize: 50 }}
             >
               experience
             </Typography>
