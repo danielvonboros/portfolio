@@ -20,7 +20,13 @@ const Projects = () => (
       <Typography variant={"h3"} color="text.primary">
         Projects Page
       </Typography>
-      <Grid2 container columns={3} spacing={1} justifyContent={"center"}>
+      <Grid2
+        container
+        columns={3}
+        spacing={1}
+        justifyContent={"center"}
+        sx={{ my: 4 }}
+      >
         <ProjectCard />
       </Grid2>
     </Box>

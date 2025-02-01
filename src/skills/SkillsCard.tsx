@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Tooltip, Typography } from "@mui/material";
 
 export interface SkillsList {
   skill: Skill;
@@ -12,13 +12,24 @@ export interface Skill {
 
 const SkillsCard = ({ skill }: SkillsList) => {
   return (
-    <Box sx={{ maxWidth: "100px", maxHeight: "200px", overflow: "hidden" }}>
-      <Box sx={{ width: "50px", height: "50px" }}>
-        <img src={skill.image} alt={skill.title} width="100%" height="100%" />
+    <Tooltip title={skill.description}>
+      <Box
+        sx={{
+          minWidth: "100px",
+          maxHeight: "200px",
+          overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          m: 2,
+        }}
+      >
+        <Box sx={{ width: "50px", height: "50px" }}>
+          <img src={skill.image} alt={skill.title} width="100%" height="100%" />
+        </Box>
+        <Typography>{skill.title}</Typography>
       </Box>
-      <Typography>{skill.title}</Typography>
-      <Typography>{skill.description}</Typography>
-    </Box>
+    </Tooltip>
   );
 };
 

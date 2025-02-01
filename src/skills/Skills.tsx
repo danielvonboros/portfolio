@@ -21,7 +21,13 @@ const Skills = () => (
       <Typography variant={"h3"} fontSize={50} color="text.primary">
         Skills Page
       </Typography>
-      <Grid2 container columns={7} spacing={1} justifyContent={"center"}>
+      <Grid2
+        container
+        columns={7}
+        spacing={1}
+        justifyContent={"center"}
+        sx={{ my: 4 }}
+      >
         {skillsList.map((skill: Skill) => (
           <SkillsCard skill={skill} />
         ))}

@@ -4,10 +4,13 @@ import {
   Box,
   Typography,
   AccordionSummary,
+  Link,
+  Button,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import React, { useState } from "react";
 import { theme } from "../assets/theme";
+import Contact from "../contact/Contact";
 
 const About = () => {
   const [expanded, setExpanded] = useState<string | false>("experience");
@@ -71,30 +74,39 @@ const About = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="h4" color="text.primary">
-              I am a software engineer and I bring 3 years of experience in the
-              field of Frontend development with React and TypeScript. Creating
-              things always played a big role in my life. As a child I used to
-              play with LEGO bricks, then started crafting furniture as a
-              teenager and learned to design buildings in university, where I
-              attained my masters-degree in architecture. Coding started as a
-              hobby when I began to think about improving communication and
-              processes on construction sites and it soon became a serious
-              career path. Driven by the idea to make a bigger impact on society
-              and the planet, I want to create applications and user interfaces,
-              that help people make everyday life easier. I am currently looking
-              for a job in a progressive and forward-thinking company in an
-              open-minded and supportive team. I am a team player and like to
-              contribute my work to a team of enthusiastic and driven
-              colleagues, just as myself. I'm sure I can draw your interest in
-              my work below, check it out and don't hesitate to get in touch. I
-              am thrilled to hearing from you.
+              I am a software engineer with a passion for building digital
+              experiences that make a real impact. With 3 years of experience in
+              frontend development using React and TypeScript, I specialize in
+              crafting intuitive user interfaces and seamless web applications.
             </Typography>
             <Typography variant="h4" color="text.primary">
-              I can work self-sufficiently and in a remote setting, I am highly
-              skilled in organizing my work and contribute to team efforts. In
-              the past I overtook responsibilities for junior colleagues and
-              releases.
+              Creating has always been a driving force in my life. From
+              constructing with LEGO as a child to designing furniture as a
+              teenager and ultimately earning a master’s degree in architecture,
+              I’ve always been drawn to problem-solving through design. My
+              journey into coding began when I sought to improve communication
+              and processes on construction sites—what started as a side
+              interest quickly evolved into my true career path.
             </Typography>
+            <Typography variant="h4" color="text.primary">
+              My background in architecture equips me with a strong foundation
+              in design thinking, creative problem-solving, and a user-centric
+              approach—skills that translate seamlessly into software
+              development. I thrive on collaborating with cross-functional
+              teams, aligning technical solutions with user needs, and
+              delivering products that enhance everyday life.
+            </Typography>
+            <Typography variant="h4" color="text.primary">
+              I am looking for an opportunity in a forward-thinking company with
+              an open-minded and supportive team. I bring experience in
+              mentoring junior colleagues, managing releases, and working
+              efficiently in remote and self-sufficient settings. If you're
+              looking for a developer who combines technical expertise with a
+              keen eye for design and usability, let’s connect—I’d love to chat!
+            </Typography>
+            <Link to="/contact">
+              <Button>Contact Me!</Button>
+            </Link>
           </AccordionDetails>
         </Accordion>
         <Accordion
@@ -121,10 +133,22 @@ const About = () => {
               Fullstack Web Development at careerfoundry
             </Typography>
             <Typography variant="h4" color="text.primary">
-              2014/10-2017/04
+              2014/10 - 2017/04
             </Typography>
             <Typography variant="h4" color="text.primary">
               Masters degree in Architecture at BHT Berlin
+            </Typography>
+            <Typography variant="h4" color="text.primary">
+              2011/10 - 2014/07
+            </Typography>
+            <Typography variant="h4" color="text.primary">
+              Bachelors degree in Architecture at HS Karlsruhe
+            </Typography>
+            <Typography variant="h4" color="text.primary">
+              2001/09 - 2010/07
+            </Typography>
+            <Typography variant="h4" color="text.primary">
+              High School Diploma at Elisabeth-von-Thadden-Schule Heidelberg
             </Typography>
           </AccordionDetails>
         </Accordion>
