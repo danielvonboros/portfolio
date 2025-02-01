@@ -1,4 +1,3 @@
-import { StayPrimaryPortraitOutlined } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import { theme } from "../assets/theme";
 
@@ -51,7 +50,7 @@ const Home = () => (
       </Box>
       <Box sx={{ maxWidth: "40%" }}>
         <img
-          src="IMG_0584.jpeg"
+          src="IMG_5598.jpeg"
           alt="Daniel"
           style={{ width: "100%", height: "100%" }}
         />
