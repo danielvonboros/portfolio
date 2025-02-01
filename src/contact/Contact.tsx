@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 import { theme } from "../assets/theme";
+import { contactList } from "./contactList";
 
 const Contact = () => (
   <>
@@ -18,11 +19,27 @@ const Contact = () => (
       <Typography variant={"h3"} color="text.primary">
         Contact Me{" "}
       </Typography>
+      <Stack direction="row" spacing={2}>
+        {contactList.map((item) => (
+          <Box key={item.id}>
+            <Link href={item.link} target="_blank" rel="noreferrer">
+              <Box sx={{ height: "50px", width: "50px" }}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  width="100%"
+                  height="100%"
+                />
+              </Box>
+              <Typography variant="h4" color="text.primary">
+                {item.title}
+              </Typography>
+            </Link>
+          </Box>
+        ))}
+      </Stack>
       <Typography variant="h4" color="text.primary">
         Get in Touch
-      </Typography>
-      <Typography variant="h4" color="text.primary">
-        LinkedIN Xing Twitter Email
       </Typography>
     </Box>
   </>
