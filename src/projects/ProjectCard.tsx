@@ -1,4 +1,4 @@
-import { Box, Link, Paper, Typography } from "@mui/material";
+import { Box, Button, Link, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { projectData } from "./projectData";
 
@@ -13,7 +13,6 @@ const ProjectCardItem = styled(Paper, {
   padding: 15,
   margin: 2,
   border: `1px solid ${theme.palette.secondary.main}`,
-  borderRadius: "15px",
   "&:hover": {
     backgroundColor: hoverBackgroundColor || theme.palette.secondary.main,
     color: hoverColor || theme.palette.primary.main,
@@ -33,15 +32,34 @@ const ProjectCard = ({ props }) => {
           },
         }}
       >
-        <Typography variant="h5" fontWeight={600}>
+        <Typography variant="h5" fontWeight={300}>
           {project.title}
         </Typography>
-        <img src={project.image} alt={project.title} />
+        <Box sx={{ height: "190px", width: "280px" }}>
+          <img
+            src={project.image}
+            alt={project.title}
+            height={"100%"}
+            width={"100%"}
+          />
+        </Box>
         <Typography>{project.description}</Typography>
         <Typography>{project.techStack}</Typography>
-        <Link sx={{ color: "secondary.main" }} href={project.link}>
-          Link
-        </Link>
+
+        {project.link ? (
+          <Link href={project.link}>
+            <Button>
+              <Typography variant="h6">Link</Typography>
+            </Button>
+          </Link>
+        ) : null}
+        {project.github ? (
+          <Link href={project.github}>
+            <Button>
+              <Typography variant="h6">Github</Typography>
+            </Button>
+          </Link>
+        ) : null}
       </ProjectCardItem>
     ));
   } else {

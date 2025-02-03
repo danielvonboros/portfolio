@@ -14,37 +14,38 @@ export const theme = createTheme({
     },
     typography: {
         h1: {
-          fontFamily: 'Chelsea Market',
+          fontFamily: 'Alegreya Sans',
+          fontWeight: 100,
           fontSize: 96,
           color: 'palette.secondary.main'
         },
         h3: {
-          fontFamily: 'Noto Sans',
+          fontFamily: 'Alegreya Sans',
           fontSize: 30,
-          fontWeight: 800,
+          fontWeight: 100,
           color: '#AFE7E9'
         },
         h4: {
-            fontFamily: 'Advent Pro',
+            fontFamily: 'Alegreya Sans',
             fontSize: 26,
-            fontWeight: 400,
+            fontWeight: 100,
             color: '#AFE7E9'
         },
         h5: {
-          fontFamily: 'Archivo',
+          fontFamily: 'Alegreya Sans',
             fontSize: 24,
-            fontWeight: 600,
+            fontWeight: 100,
             color: '#AFE7E9'
         },
         h6: {
-          fontFamily: 'Advent Pro',
+          fontFamily: 'Alegreya Sans',
             fontSize: 20,
-            fontWeight: 400,
+            fontWeight: 100,
             color: '#AFE7E9'
         },
         body1: {
-            fontFamily: 'Advent Pro',
-            fontWeight: 400,
+            fontFamily: 'Alegreya Sans',
+            fontWeight: 100,
             color: '#AFE7E9'
         },
     }

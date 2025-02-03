@@ -1,56 +1,54 @@
 export const projectData = [
     {
         id: 1,
-        title: "FilmOpedia React Client",
+        title: "FilmOpedia React",
         description: "Movie Database, MERN Stack build with React, node.js and Mongo DB",
         techStack: "React, Node.js, Express, MongoDB",
-        image: "https://placehold.co/250x200",
+        image: "/projectImages/filmopediaReact1.jpg",
         link: "https://filmopedia-client.netlify.app",
         github: "https://github.com/danielvonboros/filmOpedia-client"
-    },
-    {
-        id: 2,
-        title: "FilmOpedia Angular Client",
-        description: "Movie Database coded with the MEAN Stack",
-        techStack: "Angular, Node.js, Express, MongoDB",
-        image: "https://placehold.co/250x200",
-        link: "https://danielvonboros.com/filmopedia-angular-client/welcome",
-        github: "https://github.com/danielvonboros/filmopedia-angular-client"
     },
     {
         id: 3,
-        title: "meet App",
-        description: "This is a project description",
+        title: "meet",
+        description: "Events app build with React, Firebase and Google Calendar API",
         techStack: "React, Firebase",
-        image: "https://placehold.co/250x200",
+        image: "/projectImages/meet1.jpg",
         link: "https://danielvonboros.com/meet/",
         github: "https://github.com/danielvonboros/meet"
     },
     {
-        id: 4,
-        title: "FilmOpedia React Client",
-        description: "Movie Database, MERN Stack build with React, node.js and Mongo DB",
-        techStack: "React, Node.js, Express, MongoDB",
-        image: "https://placehold.co/250x200",
-        link: "https://filmopedia-client.netlify.app",
-        github: "https://github.com/danielvonboros/filmOpedia-client"
-    },
-    {
-        id: 5,
-        title: "FilmOpedia Angular Client",
+        id: 2,
+        title: "FilmOpedia Angular",
         description: "Movie Database coded with the MEAN Stack",
         techStack: "Angular, Node.js, Express, MongoDB",
-        image: "https://placehold.co/250x200",
-        link: "https://danielvonboros.com/filmopedia-angular-client/welcome",
+        image: "/projectImages/filmopediaAngular1.jpg",
+        link: "https://danielvonboros.com/filmopedia-angular-client",
         github: "https://github.com/danielvonboros/filmopedia-angular-client"
     },
     {
-        id: 6,
-        title: "Project 3",
-        description: "This is a project description",
-        techStack: "React, Firebase",
+        id: 4,
+        title: "talk",
+        description: "Chat App built with ReactNative and Expo",
+        techStack: "React, Node.js, Express, MongoDB",
+        image: "/projectImages/talk1.jpg",
+        github: "https://github.com/danielvonboros/talk"
+    },
+    {
+        id: 5,
+        title: "Portfolio (this project)",
+        description: "Movie Database coded with the MEAN Stack",
+        techStack: "React, vite, MUI",
         image: "https://placehold.co/250x200",
-        link: "https://danielvonboros.com/meet/",
-        github: "https://github.com/danielvonboros/meet"
+        link: "https://danielvonboros.com",
+        github: "https://github.com/danielvonboros/portfolio"
+    },
+    {
+        id: 6,
+        title: "Filmopedia API",
+        description: "Backend to the Filmoepdia project build with node.js and Express",
+        techStack: "node.js, Express, MongoDB",
+        image: "/projectImages/filmopediaApi1.jpg",
+        github: "https://github.com/danielvonboros/filmOpedia"
     }
 ]

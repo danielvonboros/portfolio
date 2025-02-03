@@ -8,7 +8,7 @@ const Skills = () => (
     <Box
       sx={{
         pt: 8,
-        minHeight: "100vh",
+        minHeight: "768px",
         width: "100%",
         borderLeft: `3px solid ${theme.palette.secondary.main}`,
         borderBottom: `3px solid ${theme.palette.secondary.main}`,
@@ -19,7 +19,7 @@ const Skills = () => (
       }}
     >
       <Typography variant={"h3"} fontSize={50} color="text.primary">
-        Skills Page
+        skills
       </Typography>
       <Grid2
         container

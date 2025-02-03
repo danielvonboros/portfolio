@@ -7,7 +7,7 @@ const Contact = () => (
     <Box
       sx={{
         pt: 8,
-        minHeight: "100vh",
+        minHeight: "768px",
         width: "calc(100% - 3px)",
         borderRight: `3px solid ${theme.palette.secondary.main}`,
         display: "flex",
@@ -16,14 +16,20 @@ const Contact = () => (
         justifyContent: "center",
       }}
     >
-      <Typography variant={"h3"} color="text.primary">
-        Contact Me{" "}
+      <Typography variant={"h3"} color="text.primary" fontSize={50}>
+        contact me{" "}
       </Typography>
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={2} sx={{ m: 4 }}>
         {contactList.map((item) => (
           <Box key={item.id}>
             <Link href={item.link} target="_blank" rel="noreferrer">
-              <Box sx={{ height: "50px", width: "50px" }}>
+              <Box
+                sx={{
+                  height: "50px",
+                  width: "50px",
+                  mx: "auto",
+                }}
+              >
                 <img
                   src={item.image}
                   alt={item.title}
@@ -31,7 +37,7 @@ const Contact = () => (
                   height="100%"
                 />
               </Box>
-              <Typography variant="h4" color="text.primary">
+              <Typography variant="h4" color="text.primary" sx={{ mt: 1 }}>
                 {item.title}
               </Typography>
             </Link>

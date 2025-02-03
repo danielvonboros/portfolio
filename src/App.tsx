@@ -76,7 +76,9 @@ const App = () => {
             justifyContent: "space-between",
           }}
         >
-          <Typography>Home</Typography>
+          <Typography variant="h3" sx={{ my: "auto", mx: 4 }}>
+            daniel von boros
+          </Typography>
           <Stack direction="row">
             <Toolbar>
               {sections.map((section, index) => (
@@ -105,10 +107,9 @@ const App = () => {
           <Box
             sx={{
               width: "100%",
-              minHeight: "100vh",
+              minHeight: "768px",
               maxWidth: { sm: 1100 },
               p: 0,
-              // maxHeight: { sm: 768 },
               overflow: "hidden",
               display: "flex",
               flexDirection: "column",

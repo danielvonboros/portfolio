@@ -10,7 +10,6 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import React, { useState } from "react";
 import { theme } from "../assets/theme";
-import Contact from "../contact/Contact";
 
 const About = () => {
   const [expanded, setExpanded] = useState<string | false>("experience");
@@ -42,7 +41,7 @@ const About = () => {
       <Box
         sx={{
           pt: 8,
-          minHeight: "100vh",
+          minHeight: "768px",
           width: "calc(100% - 3px)",
           borderLeft: `3px solid ${theme.palette.secondary.main}`,
           borderBottom: `3px solid ${theme.palette.secondary.main}`,
@@ -52,23 +51,58 @@ const About = () => {
           justifyContent: "center",
         }}
       >
-        <Typography variant={"h3"} color="text.primary" sx={{ fontSize: 50 }}>
+        <Typography
+          variant={"h3"}
+          color="text.primary"
+          fontSize={50}
+          sx={{ mb: 4 }}
+        >
           about
         </Typography>
-
         <Accordion
-          sx={getAccordionStyle("story", "100%", "0")}
+          elevation={0}
+          sx={getAccordionStyle("experience", "100%", "0")}
+          expanded={expanded === "experience"}
+          onChange={handleChange("experience")}
+        >
+          <AccordionSummary
+            expandIcon={<AddIcon sx={{ color: "secondary.main" }} />}
+          >
+            <Typography variant={"h3"} color="text.primary" fontWeight={300}>
+              experience
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant="h4" color="text.primary">
+              2021/11 - 2024/12
+            </Typography>
+            <Typography variant="h4" color="text.primary">
+              Frontend Developer at Maltego
+            </Typography>
+            <Typography variant="h4" color="text.primary">
+              2020/05 - 2021/02
+            </Typography>
+            <Typography variant="h4" color="text.primary">
+              Project Manager at Bauart Architekten und Ingenieure
+            </Typography>
+            <Typography variant="h4" color="text.primary">
+              2018/02 - 2019/12
+            </Typography>
+            <Typography variant="h4" color="text.primary">
+              Team Lead Construction at Von Rüden Immobilien
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          elevation={0}
+          sx={getAccordionStyle("story", "90%", "10%")}
           expanded={expanded === "story"}
           onChange={handleChange("story")}
         >
           <AccordionSummary
             expandIcon={<AddIcon sx={{ color: "secondary.main" }} />}
           >
-            <Typography
-              variant={"h3"}
-              color="text.primary"
-              // sx={{ fontSize: 50 }}
-            >
+            <Typography variant={"h3"} color="text.primary" fontWeight={300}>
               my story
             </Typography>
           </AccordionSummary>
@@ -110,18 +144,15 @@ const About = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion
-          sx={getAccordionStyle("education", "90%", "10%")}
+          elevation={0}
+          sx={getAccordionStyle("education", "80%", "20%")}
           expanded={expanded === "education"}
           onChange={handleChange("education")}
         >
           <AccordionSummary
             expandIcon={<AddIcon sx={{ color: "secondary.main" }} />}
           >
-            <Typography
-              variant={"h3"}
-              color="text.primary"
-              // sx={{ fontSize: 50 }}
-            >
+            <Typography variant={"h3"} color="text.primary" fontWeight={300}>
               education
             </Typography>
           </AccordionSummary>
@@ -149,43 +180,6 @@ const About = () => {
             </Typography>
             <Typography variant="h4" color="text.primary">
               High School Diploma at Elisabeth-von-Thadden-Schule Heidelberg
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          sx={getAccordionStyle("experience", "80%", "20%")}
-          expanded={expanded === "experience"}
-          onChange={handleChange("experience")}
-        >
-          <AccordionSummary
-            expandIcon={<AddIcon sx={{ color: "secondary.main" }} />}
-          >
-            <Typography
-              variant={"h3"}
-              color="text.primary"
-              // sx={{ fontSize: 50 }}
-            >
-              experience
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography variant="h4" color="text.primary">
-              2021/11 - 2024/12
-            </Typography>
-            <Typography variant="h4" color="text.primary">
-              Frontend Developer at Maltego
-            </Typography>
-            <Typography variant="h4" color="text.primary">
-              2020/05 - 2021/02
-            </Typography>
-            <Typography variant="h4" color="text.primary">
-              Project Manager at Bauart Architekten und Ingenieure
-            </Typography>
-            <Typography variant="h4" color="text.primary">
-              2018/02 - 2019/12
-            </Typography>
-            <Typography variant="h4" color="text.primary">
-              Team Lead Construction at Von Rüden Immobilien
             </Typography>
           </AccordionDetails>
         </Accordion>

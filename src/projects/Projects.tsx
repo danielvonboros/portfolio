@@ -7,7 +7,7 @@ const Projects = () => (
     <Box
       sx={{
         pt: 8,
-        minHeight: "100vh",
+        minHeight: "768px",
         width: "calc(100% - 3px)",
         borderRight: `3px solid ${theme.palette.secondary.main}`,
         borderBottom: `3px solid ${theme.palette.secondary.main}`,
@@ -17,8 +17,8 @@ const Projects = () => (
         flexDirection: "column",
       }}
     >
-      <Typography variant={"h3"} color="text.primary">
-        Projects Page
+      <Typography variant={"h3"} color="text.primary" fontSize={50}>
+        projects
       </Typography>
       <Grid2
         container

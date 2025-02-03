@@ -5,10 +5,10 @@ const Home = () => (
   <>
     <Box
       sx={{
-        minHeight: "100vh",
         p: 0,
         pt: 8,
         // calc 100vh - heightAppBar
+        minHeight: "768px",
         width: "calc(100% - 3px)",
         borderRight: `3px solid ${theme.palette.secondary.main}`,
         borderBottom: `3px solid ${theme.palette.secondary.main}`,
@@ -31,24 +31,17 @@ const Home = () => (
         <Typography
           variant={"h3"}
           color="text.primary"
-          sx={{ fontSize: 80, mx: "auto" }}
+          sx={{ fontSize: 80, mx: "auto", fontWeight: 500 }}
         >
-          hello
+          Frontend Developer.
         </Typography>
+
         <Typography sx={{ align: "center" }} variant="h4" color="text.primary">
-          My name is Daniel and I am a Software Developer
-        </Typography>
-        <Typography variant="h4" color="text.primary">
-          I have 3 years of experience in the field of
-        </Typography>
-        <Typography variant="h4" color="text.primary">
-          Frontend Software development
-        </Typography>
-        <Typography sx={{ mx: "auto" }} variant="h4" color="text.primary">
-          with React and TypeScript
+          I like to craft solid, scalable, and maintainable web applications.
         </Typography>
       </Box>
       <Box sx={{ maxWidth: "40%" }}>
+        {" "}
         <img
           src="IMG_5598.jpeg"
           alt="Daniel"
