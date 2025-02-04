@@ -29,7 +29,7 @@ const Skills = () => (
         sx={{ my: 4 }}
       >
         {skillsList.map((skill: Skill) => (
-          <SkillsCard skill={skill} />
+          <SkillsCard key={skill.id} skill={skill} />
         ))}
       </Grid2>
     </Box>

@@ -1,37 +1,19 @@
-import { Box, Button, Link, Paper, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box, Button, Link, Typography } from "@mui/material";
+import ProjectCardItem from "./ProjectCardItem";
 import { projectData } from "./projectData";
-import { theme } from "../assets/theme";
+import { ProjectProps } from "./projects.types";
+import { useState } from "react";
 
-const ProjectCardItem = styled(Paper, {
-  shouldForwardProp: (prop) =>
-    prop !== "hoverBackgroundColor" && prop !== "hoverColor",
-})(({ theme, hoverBackgroundColor, hoverColor }) => ({
-  elevation: 0,
-  minHeight: "350px",
-  width: "280px",
-  backgroundColor: theme.palette.primary.main,
-  padding: 15,
-  margin: 2,
-  border: `1px solid ${theme.palette.secondary.main}`,
-  "&:hover": {
-    backgroundColor: hoverBackgroundColor || theme.palette.secondary.main,
-    color: hoverColor || theme.palette.primary.main,
-  },
-}));
+const ProjectCard = () => {
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
-const ProjectCard = ({ props }) => {
-  if (projectData) {
-    return projectData.map((project) => (
+  if (projectData && projectData.length > 0) {
+    return projectData.map((project: ProjectProps) => (
       <ProjectCardItem
-        {...props}
         key={project.id}
-        sx={{
-          "&:hover": {
-            // border: `4px solid ${theme.palette.secondary.main}`,
-            cursor: "pointer",
-          },
-        }}
+        isHovered={hoveredId === project.id}
+        onMouseEnter={() => setHoveredId(project.id)}
+        onMouseLeave={() => setHoveredId(null)}
       >
         <Typography variant="h5" fontWeight={300}>
           {project.title}

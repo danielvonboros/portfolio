@@ -1,4 +1,4 @@
-import Skills from "./Skills";
+import {Skill} from "./SkillsCard";
 
 export const skillsList:Skill[] = [
     {

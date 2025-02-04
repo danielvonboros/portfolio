@@ -1,4 +1,6 @@
-export const projectData = [
+import { ProjectProps } from "./projects.types";
+
+export const projectData:ProjectProps[] = [
     {
         id: 1,
         title: "FilmOpedia React",

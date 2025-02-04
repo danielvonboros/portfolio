@@ -6,9 +6,11 @@ import {
   AccordionSummary,
   Link,
   Button,
+  SxProps,
+  Theme,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import React, { useState } from "react";
+import { useState } from "react";
 import { theme } from "../assets/theme";
 
 const About = () => {
@@ -16,6 +18,7 @@ const About = () => {
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
+      console.log(event);
     };
 
   const sharedAccordionStyle = {
@@ -138,7 +141,7 @@ const About = () => {
               looking for a developer who combines technical expertise with a
               keen eye for design and usability, let’s connect—I’d love to chat!
             </Typography>
-            <Link to="/contact">
+            <Link href="/contact">
               <Button>Contact Me!</Button>
             </Link>
           </AccordionDetails>

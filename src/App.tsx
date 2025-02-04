@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Home from "./home/Home";
 import About from "./about/About";
 import Projects from "./projects/Projects";
@@ -15,31 +15,14 @@ import {
 } from "@mui/material";
 import "./App.css";
 
+const sections = ["Home", "About", "Projects", "Skills", "Contact"];
+
 const App = () => {
-  const sections = ["Home", "About", "Projects", "Skills", "Contact"];
-
   const [currentSection, setCurrentSection] = useState("Home");
-  const sectionRefs = useRef(sections.map(() => React.createRef()));
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const renderSection = () => {
-    switch (currentSection) {
-      case "Home":
-        return <Home />;
-      case "About":
-        return <About />;
-      case "Projects":
-        return <Projects />;
-      case "Skills":
-        return <Skills />;
-      case "Contact":
-        return <Contact />;
-      default:
-        return <Home />;
-    }
-  };
-
-  const scrollToSection = (index) => {
-    sectionRefs.current[index].current.scrollIntoView({
+  const scrollToSection = (index: number) => {
+    sectionRefs.current[index]?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
@@ -49,13 +32,18 @@ const App = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      const activeSection = sectionRefs.current.findIndex(
-        (ref) => ref.current.offsetTop <= scrollPosition + windowHeight / 2
+      const activeIndex = sectionRefs.current.findIndex(
+        (ref) => ref && ref.offsetTop <= scrollPosition + windowHeight / 2
       );
+      if (activeIndex === -1 && sections[activeIndex] !== currentSection) {
+        setCurrentSection(sections[activeIndex]);
+      }
+
+      console.log(currentSection);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [currentSection]);
 
   return (
     <>
@@ -118,8 +106,10 @@ const App = () => {
             {sections.map((section, index) => (
               <Box
                 key={section}
-                ref={sectionRefs.current[index]}
-                sx={{ flexGrow: 1, p: 0 }}
+                ref={(element: HTMLDivElement | null) =>
+                  (sectionRefs.current[index] = element)
+                }
+                sx={{ minHeight: "100vh", p: 2, scrollMarginTop: "64px" }}
               >
                 {section === "Home" && <Home />}
                 {section === "About" && <About />}
