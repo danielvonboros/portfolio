@@ -1,6 +1,7 @@
 import { Box, Button, Link, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { projectData } from "./projectData";
+import { theme } from "../assets/theme";
 
 const ProjectCardItem = styled(Paper, {
   shouldForwardProp: (prop) =>
@@ -27,7 +28,7 @@ const ProjectCard = ({ props }) => {
         key={project.id}
         sx={{
           "&:hover": {
-            boxShadow: 20,
+            // border: `4px solid ${theme.palette.secondary.main}`,
             cursor: "pointer",
           },
         }}
