@@ -109,7 +109,7 @@ const App = () => {
                 ref={(element: HTMLDivElement | null) =>
                   (sectionRefs.current[index] = element)
                 }
-                sx={{ minHeight: "100vh", p: 2, scrollMarginTop: "64px" }}
+                sx={{ minHeight: "100vh", p: 0, scrollMarginTop: "64px" }}
               >
                 {section === "Home" && <Home />}
                 {section === "About" && <About />}

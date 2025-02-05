@@ -16,11 +16,13 @@ const ProjectCardItem = styled(Paper, {
   margin: 2,
   border: `1px solid ${theme.palette.secondary.main}`,
   backgroundColor: isHovered
-    ? theme.palette.primary.main
-    : theme.palette.secondary.main,
-  color: isHovered ? theme.palette.secondary.main : theme.palette.primary.main,
+    ? theme.palette.secondary.main
+    : theme.palette.primary.main,
+  color: isHovered ? theme.palette.primary.main : theme.palette.secondary.main,
   "&.MuiTypography-root, &.MuiButton-root, &.MuiLink-root": {
-    color: "inherit",
+    color: isHovered
+      ? theme.palette.primary.main
+      : theme.palette.secondary.main,
     transition: "color 0.3s",
   },
   "&:hover": { cursor: "pointer" },

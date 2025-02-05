@@ -28,7 +28,6 @@ const ProjectCard = () => {
         </Box>
         <Typography>{project.description}</Typography>
         <Typography>{project.techStack}</Typography>
-
         {project.link ? (
           <Link href={project.link}>
             <Button>
