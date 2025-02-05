@@ -27,7 +27,9 @@ const SkillsCard = ({ skill }: SkillsList) => {
         <Box sx={{ width: "50px", height: "50px" }}>
           <img src={skill.image} alt={skill.title} width="100%" height="100%" />
         </Box>
-        <Typography>{skill.title}</Typography>
+        <Typography sx={{ p: 1 }} color="secondary.main">
+          {skill.title}
+        </Typography>
       </Box>
     </Tooltip>
   );
