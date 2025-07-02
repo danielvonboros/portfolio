@@ -9,10 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "badge": "^1.0.3",
+    "button": "^1.1.1",
+    "card": "^2.5.4",
+    "input": "^1.0.1",
+    "label": "^0.2.2",
+    "lucide-react": "^0.525.0",
     "next": "15.3.4",
     "once-ui-cli": "^3.1.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "shadcn": "^2.7.0",
+    "textarea": "^0.3.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
