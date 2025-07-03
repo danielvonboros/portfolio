@@ -1,4 +1,22 @@
-const Home = () => {
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
+// import { scrollToSection } from "@/utils/scrollToSection";
+
+const scrollToSection = (sectionId: string) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  } else {
+    console.warn(`Section with ID "${sectionId}" not found.`);
+  }
+};
+
+const CodingHome = () => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center space-y-8">
@@ -6,7 +24,7 @@ const Home = () => {
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              John Doe
+              Daniel von Boros
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto">
@@ -64,4 +82,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default CodingHome;
